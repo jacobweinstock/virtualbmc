@@ -19,7 +19,7 @@ RUN apk add --no-cache xz && \
 
 # virtualbmc for the ipmi interface
 # sushy-tools for the redfish interface
-RUN apk add --no-cache python3 py3-pip py3-libvirt py3-netifaces && \
+RUN apk add --no-cache python3 py3-pip py3-libvirt py3-netifaces openssl apache2-utils && \
     python3 -m venv --system-site-packages /opt/virtualbmc && \
     /opt/virtualbmc/bin/pip3 install virtualbmc && \
     python3 -m venv --system-site-packages /opt/sushy-tools && \
